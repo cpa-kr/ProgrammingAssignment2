@@ -1,3 +1,4 @@
+
 ##	Purpose of this pair of functions is to cache an inverse value and make it
 ##	available if it has already been calculated, and if not, to calculate it.
 
@@ -20,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## 	Second function computes inverse of the matrix above.  If the inverse exists and 
-##	the matrix has not changed, retrieve inverse from cache, otherwise recaclulate and
+##	the matrix has not changed, retrieve inverse from cache, otherwise recalculate and
 ##	store.
 
 cacheSolve <- function(x, ...) {
@@ -30,7 +31,7 @@ cacheSolve <- function(x, ...) {
     message("getting cached data")
     return(inv)
   }
-  result <- X$get()
+  result <- x$get()
   inv <- solve(result, ...)
   x$setinverse(inv)
   inv
